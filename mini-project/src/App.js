@@ -1,49 +1,43 @@
-import logo from './logo.svg';
-import { Component } from 'react';
-import './App.css';
-class App extends Component{
+// eslint-disable-next-line
+import React from 'react';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Switch,
+  Route
+} from "react-router-dom"
+import Header from './Components/Header'
+import Footer from './Components/Footer'
+import Home from './Views/Home';
+import About from './Views/About'
+
+class App extends React.Component{
   render(){
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          My first mini project with react
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <div className="relative pb-10 min-h-screen">
+      <Router>
+      {/* <Header /> */}
+        <Home />
+        {/* 
+
+        <div className="p-3">
+        <Routes>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/about">
+            <About />
+          </Route>
+        </Routes>
+        </div>
+
+        */}
+        <Footer />
+      </Router> 
+    </div>
     );
   }
 }
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         My first mini project with react
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
+
 
 export default App;
